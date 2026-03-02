@@ -1,11 +1,7 @@
-import express from "express"
+import dotenv from "dotenv"
+import mongoose from "mongoose";
+import connectDB from "./db/mongodb.js";
 
-const app = express();
+dotenv.config()
 
-app.get("/",(req,res)=>{
-    res.send("Hello world");
-})
-
-app.listen(3000,()=>{
-    console.log("Server is starting")
-})
+connectDB();
